@@ -18,6 +18,7 @@ set /p IsoPath=Indiquez le chemin vers l'image ISO:
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --nic1 bridged
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --bridgeadapter1 "Realtek PCIe GBE Family Controller"
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --usbxhci on
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --clipboard-mode bidirectional
 
 :: Disque dur
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storagectl "%VmName%" --name "SATA" --add sata --controller IntelAhci
