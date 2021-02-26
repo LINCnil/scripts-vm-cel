@@ -15,7 +15,7 @@ wget "$COOKIES_LIST_URL" -O "/tmp/$COOKIES_LIST_NAME"
 
 EXEC_PATH=$(find /var/lib/flatpak/app/org.mozilla.firefox/x86_64/stable/ -name "firefox" | grep /lib/firefox/firefox)
 
-sudo -u controle "$EXEC_PATH" "/tmp/$COOKIES_LIST_NAME"
+sudo -u "$CTRL_USERNAME" "$EXEC_PATH" "/tmp/$COOKIES_LIST_NAME"
 
 # Récupération du chemin vers le profil FireFox
 CTRL_MOZ_HOME="$CTRL_HOME/.var/app/org.mozilla.firefox/.mozilla/firefox"
