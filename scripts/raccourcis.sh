@@ -19,7 +19,7 @@ URL[\$e]=trash:/
 EOF
 
 shortcut "$APPS_ROOT/wireshark.desktop" "$CTRL_DESKTOP/"
-shortcut "$APPS_ROOT/firefox-esr.desktop" "$CTRL_DESKTOP/"
+shortcut /var/lib/flatpak/exports/share/applications/org.mozilla.firefox.desktop "$CTRL_DESKTOP/"
 shortcut "$APPS_ROOT/chromium.desktop" "$CTRL_DESKTOP/"
 shortcut "$APPS_ROOT/org.kde.spectacle.desktop" "$CTRL_DESKTOP/"
 shortcut "$APPS_ROOT/org.kde.konsole.desktop" "$CTRL_DESKTOP/konsole.desktop"

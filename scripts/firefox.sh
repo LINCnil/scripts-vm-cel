@@ -3,14 +3,20 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+# Installation de FireFox
+sudo -u "$CTRL_USERNAME" flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo -u "$CTRL_USERNAME" flatpak install flathub org.mozilla.firefox
+
 # Installation de CNIL Cookies List
 wget "$COOKIES_LIST_URL" -O "/tmp/$COOKIES_LIST_NAME"
 
-sudo -u controle /usr/lib/firefox-esr/firefox-esr "/tmp/$COOKIES_LIST_NAME"
+EXEC_PATH=$(find /var/lib/flatpak/app/org.mozilla.firefox/x86_64/stable/ -name "firefox" | grep /lib/firefox/firefox)
+
+sudo -u "$CTRL_USERNAME" "$EXEC_PATH" "/tmp/$COOKIES_LIST_NAME"
 
 # Récupération du chemin vers le profil FireFox
-CTRL_MOZ_HOME="$CTRL_HOME/.mozilla/firefox"
-PROFILE_NAME=$(cat "$CTRL_MOZ_HOME/profiles.ini" | grep Path= | grep -esr | sed "s/Path=//")
+CTRL_MOZ_HOME="$CTRL_HOME/.var/app/org.mozilla.firefox/.mozilla/firefox"
+PROFILE_NAME=$(cat "$CTRL_MOZ_HOME/profiles.ini" | grep Path= | grep release | sed "s/Path=//")
 CTRL_MOZ_PROFILE="$CTRL_MOZ_HOME/$PROFILE_NAME"
 
 # Modification des moteurs de recherche
