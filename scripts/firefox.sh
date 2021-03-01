@@ -3,12 +3,9 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Installation de flatpak
-sudo apt install flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 # Installation de FireFox
-flatpak install flathub org.mozilla.firefox
+sudo -u "$CTRL_USERNAME" flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo -u "$CTRL_USERNAME" flatpak install flathub org.mozilla.firefox
 
 # Installation de CNIL Cookies List
 wget "$COOKIES_LIST_URL" -O "/tmp/$COOKIES_LIST_NAME"
