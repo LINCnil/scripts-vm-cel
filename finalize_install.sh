@@ -11,11 +11,12 @@ export CTRL_HOME="/home/$CTRL_USERNAME"
 export CTRL_DESKTOP="$CTRL_HOME/Bureau"
 export COOKIES_LIST_NAME="cnil_cookies_list-2.1.0-fx.xpi"
 export COOKIES_LIST_URL="https://github.com/LINCnil/CNIL-Cookies-List/raw/master/release/$COOKIES_LIST_NAME"
+export DISPLAY=':0'
 
 # Lancement des scripts
 bash "$SCRIPTS_ROOT/scripts/repertoire_partage.sh"
-bash "$SCRIPTS_ROOT/scripts/raccourcis.sh"
 bash "$SCRIPTS_ROOT/scripts/firefox.sh"
+bash "$SCRIPTS_ROOT/scripts/raccourcis.sh"
 bash "$SCRIPTS_ROOT/scripts/misc.sh"
 
 # Nettoyage
