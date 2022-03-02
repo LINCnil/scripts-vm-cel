@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 TryExec=konsole
-Exec=konsole -e "sudo /root/post_install/finalize_install.sh"
+Exec=konsole -e "bash /home/controle/post_install/finalize_install.sh"
 Icon=utilities-terminal
 Terminal=false
 Categories=Qt;KDE;System;TerminalEmulator;

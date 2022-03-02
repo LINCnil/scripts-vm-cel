@@ -4,13 +4,13 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Installation de FireFox
-sudo -u "$CTRL_USERNAME" flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo -u "$CTRL_USERNAME" flatpak install flathub org.mozilla.firefox
-flatpak override org.mozilla.firefox --filesystem=home
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.mozilla.firefox
+sudo flatpak override org.mozilla.firefox --filesystem=home
 
 # Installation de CNIL Cookies List
-sudo -u "$CTRL_USERNAME" wget "$COOKIES_LIST_URL" -O "$CTRL_HOME/$COOKIES_LIST_NAME"
-sudo -u "$CTRL_USERNAME" flatpak run "org.mozilla.firefox" "$CTRL_HOME/$COOKIES_LIST_NAME"
+wget "$COOKIES_LIST_URL" -O "$CTRL_HOME/$COOKIES_LIST_NAME"
+flatpak run "org.mozilla.firefox" "$CTRL_HOME/$COOKIES_LIST_NAME"
 
 # Récupération du chemin vers le profil FireFox
 CTRL_MOZ_HOME="$CTRL_HOME/.mozilla/firefox"
