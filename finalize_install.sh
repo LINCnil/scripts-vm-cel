@@ -14,10 +14,10 @@ export COOKIES_LIST_URL="https://github.com/LINCnil/CNIL-Cookies-List/raw/master
 export DISPLAY=':0'
 
 # Lancement des scripts
-sudo bash "$SCRIPTS_ROOT/scripts/repertoire_partage.sh"
+sudo --preserve-env="CTRL_USERNAME,CTRL_GROUP,CTRL_DESKTOP" bash "$SCRIPTS_ROOT/scripts/repertoire_partage.sh"
 bash "$SCRIPTS_ROOT/scripts/firefox.sh"
 bash "$SCRIPTS_ROOT/scripts/raccourcis.sh"
-sudo bash "$SCRIPTS_ROOT/scripts/misc.sh"
+sudo --preserve-env="CTRL_DESKTOP" bash "$SCRIPTS_ROOT/scripts/misc.sh"
 
 # Nettoyage
 sudo rm -rf "$SCRIPTS_ROOT" "/root/.bash_history" "$CTRL_HOME/.bash_history" "$CTRL_HOME/.config/autostart"
