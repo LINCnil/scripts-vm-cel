@@ -4,8 +4,8 @@
 :: https://www.virtualbox.org/manual/ch08.html
 
 :: Récupération des informations
-set /p VmName=Indiquez le nom de la VM: 
-set /p IsoPath=Indiquez le chemin vers l'image ISO: 
+set /p VmName=Indiquez le nom de la VM : 
+set /p IsoPath=Indiquez le chemin vers l'image ISO : 
 
 :: Création de la VM
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" createvm --name "%VmName%" --ostype "Debian_64" --register
