@@ -9,7 +9,7 @@ shortcut() {
     install --group="$CTRL_GROUP" --owner="$CTRL_USERNAME" "$1" "$2"
 }
 
-cat >"$CTRL_DESKTOP/trash:⁄.desktop" << EOF
+cat >"$CTRL_DESKTOP/trash.desktop" << EOF
 [Desktop Entry]
 EmptyIcon=user-trash
 Icon=user-trash-full
