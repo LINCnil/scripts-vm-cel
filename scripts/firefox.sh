@@ -47,11 +47,11 @@ user_pref("keyword.enabled",false);
 user_pref("extensions.pocket.enabled",false);
 
 //Désactiver les mises à jour auto des extensions
-user_pref("extensiosn.update.autoUpadteDefault",false);
+user_pref("extensions.update.autoUpdateDefault",false);
 
 //Conserver l'historique selectionnée (par défaut);
 user_pref("places.history.enabled", true);
-user_pref("browser.formfill.enabled", true);
+user_pref("browser.formfill.enable", true);
 
 //Désactiver toutes les protections contre le pistage
 user_pref("browser.contentblocking.category","custom");
@@ -59,7 +59,7 @@ user_pref("pref.privacy.disable_button.tracking_protection_exceptions", false);
 user_pref("privacy.trackingprotection.pbmode.enabled",false);
 
 //Header "Do not Track" désactivé
-user_pref("privacay.donottrackheader.enabled",false);
+user_pref("privacy.donottrackheader.enabled",false);
 
 //Désactiver le blocage des popups
 user_pref("dom.disable_open_during_load",false);
