@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Installation de FireFox
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.mozilla.firefox
+flatpak install -y flathub org.mozilla.firefox
 sudo flatpak override org.mozilla.firefox --filesystem=home
 
 # Installation de CNIL Cookies List
