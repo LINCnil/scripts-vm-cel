@@ -10,6 +10,7 @@ X-DocPath=konsole/index.html
 X-DBUS-StartupType=Unique
 StartupNotify=true
 X-KDE-AuthorizeAction=shell_access
+X-KDE-AutostartScript=true
 
 Name=Konsole
 Name[af]=Konsole
@@ -278,7 +279,7 @@ Name[uk]=Відкрити нове вікно
 Name[x-test]=xxOpen a New Windowxx
 Name[zh_CN]=打开新窗口
 Name[zh_TW]=開啟新視窗
-Exec=konsole -e "sudo /root/post_install/finalize_install.sh"
+Exec=konsole -e "bash /home/controle/post_install/finalize_install.sh"
 
 [Desktop Action NewTab]
 Name=Open a New Tab
@@ -322,4 +323,4 @@ Name[uk]=Відкрити нову вкладку
 Name[x-test]=xxOpen a New Tabxx
 Name[zh_CN]=打开新标签
 Name[zh_TW]=開啟新分頁
-Exec=konsole -e "sudo /root/post_install/finalize_install.sh" --new-tab
+Exec=konsole -e "bash /home/controle/post_install/finalize_install.sh" --new-tab
