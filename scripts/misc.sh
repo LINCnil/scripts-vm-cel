@@ -22,7 +22,6 @@ sed -i 's/^#fi/fi/' /etc/bash.bashrc
 
 # Anti-malwares
 mkdir -m777 -p "$CTRL_DESKTOP/Resultats"
-systemctl stop clamav-freshclam
 rkhunter -c -sk >> "$CTRL_DESKTOP/Resultats/Rkhunter.txt"
 chkrootkit >> "$CTRL_DESKTOP/Resultats/ChkRootkit.txt"
 systemctl stop clamav-freshclam.service
