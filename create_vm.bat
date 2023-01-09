@@ -33,9 +33,5 @@ set /p IsoPath=Indiquez le chemin vers l'image ISO :
 :: Dossier partagé
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" sharedfolder add "%VmName%" --name "PiecesNumeriques" --hostpath "C:\PiecesNumeriques" --automount
 
-:: VirtualBox Additions
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storageattach "%VmName%" --storagectl "SATA" --port 2 --device 0 --type dvddrive --medium emptydrive
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storageattach "%VmName%" --storagectl "SATA" --port 2 --device 0 --type dvddrive --medium additions
-
 :: Démarrage de la VM
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm "%VmName%"
