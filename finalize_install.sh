@@ -11,7 +11,6 @@ export CTRL_DESKTOP="$CTRL_HOME/Bureau"
 export SCRIPTS_ROOT="$CTRL_HOME/post_install"
 export COOKIES_LIST_NAME="cnil_cookies_list-2.1.0-fx.xpi"
 export COOKIES_LIST_URL="https://github.com/LINCnil/CNIL-Cookies-List/raw/master/release/$COOKIES_LIST_NAME"
-export DISPLAY=':0'
 
 # Lancement des scripts
 sudo --preserve-env="CTRL_USERNAME,CTRL_GROUP,CTRL_DESKTOP" bash "$SCRIPTS_ROOT/scripts/repertoire_partage.sh"
