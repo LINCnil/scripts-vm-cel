@@ -18,7 +18,7 @@ Type=Link
 URL[\$e]=trash:/
 EOF
 
-shortcut "$APPS_ROOT/wireshark.desktop" "$CTRL_DESKTOP/"
+shortcut "$APPS_ROOT/org.wireshark.Wireshark.desktop" "$CTRL_DESKTOP/"
 shortcut "$SCRIPTS_ROOT/cnf/firefox.desktop" "$CTRL_DESKTOP/"
 shortcut "$APPS_ROOT/chromium.desktop" "$CTRL_DESKTOP/"
 shortcut "$APPS_ROOT/org.kde.spectacle.desktop" "$CTRL_DESKTOP/"
