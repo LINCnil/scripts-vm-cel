@@ -18,4 +18,6 @@ chown -R "$CTRL_USERNAME:$CTRL_GROUP" "$CTRL_DESKTOP/PartagePiecesNumeriques"
 mount "/dev/sr0" "$ISO_MOUNT_DIR"
 
 # Installation des extensions VirtualBox
-"$ISO_MOUNT_DIR/autorun.sh"
+"$ISO_MOUNT_DIR/VBoxLinuxAdditions.run"
+
+exit 0
