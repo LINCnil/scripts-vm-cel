@@ -16,7 +16,7 @@ set /p IsoPath=Indiquez le chemin vers l'image ISO :
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --pae on
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --graphicscontroller vboxsvga
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --nic1 bridged
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --bridgeadapter1 "Realtek PCIe GBE Family Controller"
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --bridgeadapter1 "Realtek PCIe GbE Family Controller"
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --usbxhci on
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --clipboard-mode bidirectional
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --vram 128
