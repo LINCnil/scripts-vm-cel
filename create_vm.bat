@@ -4,17 +4,17 @@
 :: https://www.virtualbox.org/manual/ch08.html
 
 :: Récupération des informations
-set /p VmName=Indiquez le nom de la VM : 
+set /p VmName=Indiquez le nom de la machine virtuelle : 
 set /p IsoPath=Indiquez le chemin vers l'image ISO : 
 
 :: Création de la VM
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" createvm --name "%VmName%" --ostype "Debian_64" --register
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" createvm --name "%VmName%" --ostype "ArchLinux_64" --register
 
 :: Paramétrage de la VM
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --memory 8000
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --cpus 2
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --pae on
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --graphicscontroller vboxsvga
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --graphicscontroller vmsvga
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --nic1 bridged
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --bridgeadapter1 "Realtek PCIe GbE Family Controller"
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --usbxhci on
@@ -26,7 +26,7 @@ set /p IsoPath=Indiquez le chemin vers l'image ISO :
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" createmedium disk --format VDI --size 20000 --filename "%UserProfile%\VirtualBox VMs\%VmName%\%VmName%.vdi"
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storageattach "%VmName%" --storagectl "SATA" --port 0 --device 0 --type hdd --medium "%UserProfile%\VirtualBox VMs\%VmName%\%VmName%.vdi"
 
-:: ISO Debian
+:: Image ISO du système
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storagectl "%VmName%" --name "IDE" --add ide --controller PIIX4
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storageattach "%VmName%" --storagectl "IDE" --port 1 --device 0 --type dvddrive --medium "%IsoPath%"
 
