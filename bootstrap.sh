@@ -42,13 +42,14 @@ pacstrap -K "$INSTALL_MOUNT_POINT_ROOT" \
 	vim neovim \
 	sudo \
 	dhcpcd \
-	git \
+	git jq usbutils \
 	plasma-meta kde-applications-meta sddm \
 	noto-fonts noto-fonts-emoji noto-fonts-extra ttf-dejavu ttf-inconsolata ttf-liberation ttf-roboto \
 	virtualbox-guest-utils \
 	clamav \
-	bind dog inetutils nmap wget whois \
+	bind inetutils nmap wget whois \
 	chromium firefox firefox-i18n-fr \
+	dnsmasq hostapd iw \
 	mitmproxy mkcert \
 	obs-studio \
 	ssh-audit sqlmap \
