@@ -11,6 +11,8 @@ CTRL_HOME="/home/${CTRL_USERNAME}"
 CTRL_DESKTOP="${CTRL_HOME}/Bureau"
 CTRL_AUR_BUILD_DIR="$CTRL_HOME"
 CTRL_SCRIPT_DATA="/root/script_data"
+CTRL_LOCAL_DATA="${CTRL_HOME}/.local"
+CTRL_BIN_DATA="${CTRL_LOCAL_DATA}/bin"
 
 # Ce mot de passe n’étant utilisé que pour une machine virtuelle devant pouvoir être reproduite par les organismes contrôlés,
 # il est nécessaire de le publier au même titre que le reste des scripts de créations de la machine.
@@ -93,6 +95,12 @@ chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_HOME}/script_data"
 chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_HOME}/.config/autostart"
 chmod 755 "${CTRL_HOME}/script_data/finalize_install.sh"
 chmod 755 "${CTRL_HOME}/.config/autostart/auto_install.desktop"
+
+# Répertoire des exécutables
+mkdir -p "${CTRL_BIN_DATA}"
+cp -v "${CTRL_SCRIPT_DATA}/wifi_ap_setup.sh" "${CTRL_BIN_DATA}"
+chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_LOCAL_DATA}"
+echo 'export PATH="$PATH:$HOME/.local/bin"' >>"${CTRL_HOME}/.bashrc"
 
 # Agencement clavier
 cat >"${CTRL_HOME}/.config/kxkbrc" << EOF

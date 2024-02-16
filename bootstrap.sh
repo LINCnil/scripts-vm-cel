@@ -65,8 +65,9 @@ mkdir -p "${DATA_DEST_PATH}/cnf"
 cp -vr "${SHARED_DIR}/cnf" "$DATA_DEST_PATH"
 cp -v "${SHARED_DIR}/configure.sh" "$DATA_DEST_PATH"
 cp -v "${SHARED_DIR}/finalize_install.sh" "$DATA_DEST_PATH"
+cp -v "${SHARED_DIR}/wifi_ap_setup.sh" "$DATA_DEST_PATH"
 arch-chroot "$INSTALL_MOUNT_POINT_ROOT" /bin/bash "${CHROOT_DATA_DEST_PATH}/configure.sh"
-rm -rf "${DATA_DEST_PATH}/cnf" "${DATA_DEST_PATH}/configure.sh" "${DATA_DEST_PATH}/finalize_install.sh"
+rm -rf "${DATA_DEST_PATH}/cnf" "${DATA_DEST_PATH}/configure.sh" "${DATA_DEST_PATH}/finalize_install.sh" "${DATA_DEST_PATH}/wifi_ap_setup.sh"
 
 # Finalisation
 umount -R /mnt
