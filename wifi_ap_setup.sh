@@ -3,7 +3,7 @@
 # Paramètres du point d'accès
 # En cas de problème de connexion, utiliser un autre canal (de 1 à 11)
 AP_CHANNEL="1"
-AP_NAME="CNIL-CEL-AP-$(openssl rand -hex 2)"
+AP_NAME="CNIL-CEL-AP-$(openssl rand -hex 4)"
 AP_PASSWORD="cnil1978"
 echo "Nom du point d'accès : ${AP_NAME}"
 echo "Mot de passe du point d'accès : ${AP_PASSWORD}"
