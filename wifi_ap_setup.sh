@@ -4,9 +4,9 @@
 # En cas de problème de connexion, utiliser un autre canal (de 1 à 11)
 AP_CHANNEL="1"
 AP_NAME="CNIL-CEL-AP-$(openssl rand -hex 2)"
+AP_PASSWORD="cnil1978"
 echo "Nom du point d'accès : ${AP_NAME}"
-echo -n "Mot de passe du point d'accès : "
-read AP_PASSWORD
+echo "Mot de passe du point d'accès : ${AP_PASSWORD}"
 
 # Nom des interfaces réseau
 OUT_INTERFACE="enp0s3"
