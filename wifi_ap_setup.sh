@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+error_msg () {
+	echo "$1" >&2
+}
+
 # Prévention du lancement en simple utilisateur
 if [[ "$(whoami)" != "root" ]]; then
-	echo "Le script doit être exécuté avec les droits d'administration"
-	echo "Exemple: sudo wifi_ap_setup.sh"
+	error_msg "Le script doit être exécuté avec les droits d'administration"
+	error_msg "Exemple: sudo wifi_ap_setup.sh"
 	exit 1
 fi
 
@@ -20,11 +24,11 @@ OUT_INTERFACE="enp0s3"
 AP_INTERFACE="$(ip -json address | jq -r '.[].ifname' | grep '^wl')"
 NB_INTERFACES=$(echo "$AP_INTERFACE" | wc -l)
 if [[ "$AP_INTERFACE" = "" ]]; then
-	echo "Erreur: aucune interface détectée"
+	error_msg "Erreur: aucune interface détectée"
 	exit 1
 fi
 if [[ "$NB_INTERFACES" != "1" ]]; then
-	echo "Erreur: $NB_INTERFACES interfaces détectées"
+	error_msg "Erreur: $NB_INTERFACES interfaces détectées"
 	exit 1
 fi
 
