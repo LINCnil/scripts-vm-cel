@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Prévention du lancement en simple utilisateur
+if [[ "$(whoami)" != "root" ]]; then
+	echo "Le script doit être exécuté avec les droits d'administration"
+	echo "Exemple: sudo wifi_ap_setup.sh"
+	exit 1
+fi
+
 # Paramètres du point d'accès
 # En cas de problème de connexion, utiliser un autre canal (de 1 à 11)
 AP_CHANNEL="1"
