@@ -91,4 +91,4 @@ sudo chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "$CTRL_RESULTS_DIR"
 
 sudo rm -rf "/root/.bash_history" "$CTRL_HOME/.bash_history" "$CTRL_HOME/.config/autostart" "$SCRIPTS_ROOT"
 echo "Installation terminée. Appuyez sur <Entrée> pour fermer."
-read
+read -r
