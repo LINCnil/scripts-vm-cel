@@ -72,11 +72,13 @@ mkdir -p "$CTRL_RESULTS_DIR"
 
 # ChkRootkit
 # https://fr.wikipedia.org/wiki/Chkrootkit
+# shellcheck disable=SC2024
 sudo chkrootkit >"${CTRL_RESULTS_DIR}/ChkRootkit.txt"
 
 # ClamAV
 # https://wiki.archlinux.org/title/ClamAV
 sudo freshclam
+# shellcheck disable=SC2024
 sudo clamscan >"${CTRL_RESULTS_DIR}/ClamScan.txt"
 
 # Correction des droits sur le dossier de résultats et son contenu
