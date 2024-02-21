@@ -40,7 +40,7 @@ firefox "${CTRL_HOME}/${COOKIES_LIST_NAME}"
 
 # Récupération du chemin vers le profil FireFox
 CTRL_MOZ_HOME="${CTRL_HOME}/.mozilla/firefox"
-PROFILE_NAME=$(cat "$CTRL_MOZ_HOME/profiles.ini" | grep Path= | grep release | sed "s/Path=//")
+PROFILE_NAME=$(grep Path= "$CTRL_MOZ_HOME/profiles.ini" | grep release | sed "s/Path=//")
 CTRL_MOZ_PROFILE="${CTRL_MOZ_HOME}/${PROFILE_NAME}"
 
 # Modification des moteurs de recherche
