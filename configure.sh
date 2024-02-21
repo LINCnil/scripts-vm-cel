@@ -17,7 +17,7 @@ CTRL_BIN_DATA="${CTRL_LOCAL_DATA}/bin"
 # Ce mot de passe n’étant utilisé que pour une machine virtuelle devant pouvoir être reproduite par les organismes contrôlés,
 # il est nécessaire de le publier au même titre que le reste des scripts de créations de la machine.
 # Le mot de passe est donc « Cnil1978! ».
-DEFAULT_PASSWORD='$y$j9T$0W6iUary2QbdF3qyu4Tzh0$XokZXEWnFqXzIXfwprSo9zuP1fFeEW6B9pRFnpgtNO1'
+DEFAULT_PASSWORD="\$y\$j9T\$0W6iUary2QbdF3qyu4Tzh0\$XokZXEWnFqXzIXfwprSo9zuP1fFeEW6B9pRFnpgtNO1"
 
 
 #
@@ -101,7 +101,7 @@ mkdir -p "${CTRL_BIN_DATA}"
 cp -v "${CTRL_SCRIPT_DATA}/wifi_ap_setup.sh" "${CTRL_BIN_DATA}"
 chmod 755 "${CTRL_BIN_DATA}/wifi_ap_setup.sh"
 chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_LOCAL_DATA}"
-echo 'export PATH="$PATH:$HOME/.local/bin"' >>"${CTRL_HOME}/.bashrc"
+echo "export PATH=\"$PATH:$HOME/.local/bin\"" >>"${CTRL_HOME}/.bashrc"
 
 # Agencement clavier
 cat >"${CTRL_HOME}/.config/kxkbrc" << EOF
