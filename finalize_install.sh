@@ -14,7 +14,7 @@ COOKIES_LIST_NAME="cnil_cookies_list-2.1.0-fx.xpi"
 COOKIES_LIST_URL="https://github.com/LINCnil/CNIL-Cookies-List/raw/master/release/$COOKIES_LIST_NAME"
 
 copy_file() {
-    sudo install --verbose --group="$CTRL_GROUP" --owner="$CTRL_USERNAME" "$1" "$2"
+	sudo install --verbose --group="$CTRL_GROUP" --owner="$CTRL_USERNAME" "$1" "$2"
 }
 
 
@@ -61,7 +61,7 @@ copy_file "${SCRIPTS_ROOT}/cnf/user.js" "${CTRL_MOZ_PROFILE}/user.js"
 
 mkdir -p "$CTRL_RESULTS_DIR"
 
-# Rkhunter 
+# Rkhunter
 # https://wiki.archlinux.org/title/Rkhunter
 # TODO : remettre rkhunter (y compris dans le `pacstrap`) une fois le bug corrigé, si un jour il est corrigé (dernière version datant de 2018).
 # https://bugs.archlinux.org/task/75898?tasks=&type=&sev=&due=&amp%3Bstatus=all&order2=&sort2=desc&date=0

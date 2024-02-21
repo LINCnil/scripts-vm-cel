@@ -131,7 +131,7 @@ chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_HOME}/.config"
 #
 
 create_shortcut() {
-    install --verbose --group="$CTRL_GROUP" --owner="$CTRL_USERNAME" "$1" "$2"
+	install --verbose --group="$CTRL_GROUP" --owner="$CTRL_USERNAME" "$1" "$2"
 }
 
 mkdir -p "$CTRL_DESKTOP"
