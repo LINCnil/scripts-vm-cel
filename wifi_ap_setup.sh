@@ -58,6 +58,7 @@ sysctl net.ipv4.conf.all.forwarding=1
 sysctl net.ipv6.conf.all.forwarding=1
 
 systemctl restart nftables.service
+nft flush ruleset
 nft add table inet nat
 nft add chain inet nat postrouting { type nat hook postrouting priority 100 \; }
 nft add rule inet nat postrouting oifname "${OUT_INTERFACE}" masquerade
