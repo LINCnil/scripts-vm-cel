@@ -14,7 +14,7 @@ COOKIES_LIST_NAME="cnil_cookies_list-2.1.0-fx.xpi"
 COOKIES_LIST_URL="https://github.com/LINCnil/CNIL-Cookies-List/raw/master/release/$COOKIES_LIST_NAME"
 
 copy_file() {
-    sudo install --verbose --group="$CTRL_GROUP" --owner="$CTRL_USERNAME" "$1" "$2"
+	sudo install --verbose --group="$CTRL_GROUP" --owner="$CTRL_USERNAME" "$1" "$2"
 }
 
 
@@ -40,7 +40,7 @@ firefox "${CTRL_HOME}/${COOKIES_LIST_NAME}"
 
 # Récupération du chemin vers le profil FireFox
 CTRL_MOZ_HOME="${CTRL_HOME}/.mozilla/firefox"
-PROFILE_NAME=$(cat "$CTRL_MOZ_HOME/profiles.ini" | grep Path= | grep release | sed "s/Path=//")
+PROFILE_NAME=$(grep Path= "$CTRL_MOZ_HOME/profiles.ini" | grep release | sed "s/Path=//")
 CTRL_MOZ_PROFILE="${CTRL_MOZ_HOME}/${PROFILE_NAME}"
 
 # Modification des moteurs de recherche
@@ -61,7 +61,7 @@ copy_file "${SCRIPTS_ROOT}/cnf/user.js" "${CTRL_MOZ_PROFILE}/user.js"
 
 mkdir -p "$CTRL_RESULTS_DIR"
 
-# Rkhunter 
+# Rkhunter
 # https://wiki.archlinux.org/title/Rkhunter
 # TODO : remettre rkhunter (y compris dans le `pacstrap`) une fois le bug corrigé, si un jour il est corrigé (dernière version datant de 2018).
 # https://bugs.archlinux.org/task/75898?tasks=&type=&sev=&due=&amp%3Bstatus=all&order2=&sort2=desc&date=0
@@ -72,11 +72,13 @@ mkdir -p "$CTRL_RESULTS_DIR"
 
 # ChkRootkit
 # https://fr.wikipedia.org/wiki/Chkrootkit
+# shellcheck disable=SC2024
 sudo chkrootkit >"${CTRL_RESULTS_DIR}/ChkRootkit.txt"
 
 # ClamAV
 # https://wiki.archlinux.org/title/ClamAV
 sudo freshclam
+# shellcheck disable=SC2024
 sudo clamscan >"${CTRL_RESULTS_DIR}/ClamScan.txt"
 
 # Correction des droits sur le dossier de résultats et son contenu
@@ -91,4 +93,4 @@ sudo chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "$CTRL_RESULTS_DIR"
 
 sudo rm -rf "/root/.bash_history" "$CTRL_HOME/.bash_history" "$CTRL_HOME/.config/autostart" "$SCRIPTS_ROOT"
 echo "Installation terminée. Appuyez sur <Entrée> pour fermer."
-read
+read -r
