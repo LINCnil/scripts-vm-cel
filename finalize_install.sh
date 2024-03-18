@@ -64,6 +64,7 @@ xdg-settings set default-web-browser "firefox.desktop"
 
 kwriteconfig5 --file kscreenlockerrc --group Daemon --key Autolock false
 kwriteconfig5 --file kscreenlockerrc --group Daemon --key LockOnResume false
+kwriteconfig5 --file kdeglobals --group KDE --key SingleClick false
 
 
 #

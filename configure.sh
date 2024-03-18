@@ -113,13 +113,6 @@ LayoutList=fr
 Use=true
 EOF
 
-# Double click pour ouvrir les fichiers
-cat >>"${CTRL_HOME}/.config/kdeglobals" << EOF
-
-[KDE]
-SingleClick=false
-EOF
-
 # Correction des droits sur le dossier de configuration et son contenu
 chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_HOME}/.config"
 
