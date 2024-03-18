@@ -155,6 +155,22 @@ chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_DESKTOP}"
 
 
 #
+# -----------
+# Hibernation
+# -----------
+#
+
+mkdir -p "/etc/systemd/sleep.conf.d"
+cat >"/etc/systemd/sleep.conf.d/disable-suspend.conf" << EOF
+[Sleep]
+AllowSuspend=no
+AllowHibernation=no
+AllowHybridSleep=no
+AllowSuspendThenHibernate=no
+EOF
+
+
+#
 # --------------------
 # Arch User Repository
 # --------------------

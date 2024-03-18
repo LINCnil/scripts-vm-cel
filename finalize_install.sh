@@ -57,6 +57,16 @@ xdg-settings set default-web-browser "firefox.desktop"
 
 
 #
+# ------
+# Plasma
+# ------
+#
+
+kwriteconfig5 --file kscreenlockerrc --group Daemon --key Autolock false
+kwriteconfig5 --file kscreenlockerrc --group Daemon --key LockOnResume false
+
+
+#
 # -------------
 # Anti-malwares
 # -------------
