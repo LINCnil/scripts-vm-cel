@@ -1,0 +1,13 @@
+name: ci
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install shellcheck
+        run: sudo apt update && sudo apt install -y shellcheck
+      - name: Run shellcheck
+        run: shellcheck bootstrap.sh configure.sh finalize_install.sh wifi_ap_setup.sh
