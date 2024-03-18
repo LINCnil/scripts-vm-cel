@@ -52,6 +52,9 @@ copy_file "${SCRIPTS_ROOT}/cnf/search.json.mozlz4" "${CTRL_MOZ_PROFILE}/search.j
 # https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences#Changing_defaults
 copy_file "${SCRIPTS_ROOT}/cnf/user.js" "${CTRL_MOZ_PROFILE}/user.js"
 
+# Définition de Firefox comme navigateur par défaut
+xdg-settings set default-web-browser "firefox.desktop"
+
 
 #
 # -------------
