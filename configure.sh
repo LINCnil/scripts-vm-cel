@@ -142,6 +142,7 @@ create_shortcut "$APPS_ROOT/firefox.desktop" "${CTRL_DESKTOP}/"
 create_shortcut "$APPS_ROOT/chromium.desktop" "${CTRL_DESKTOP}/"
 create_shortcut "$APPS_ROOT/org.kde.spectacle.desktop" "${CTRL_DESKTOP}/"
 create_shortcut "$APPS_ROOT/org.kde.konsole.desktop" "${CTRL_DESKTOP}/konsole.desktop"
+create_shortcut "$APPS_ROOT/pcmanfm.desktop" "${CTRL_DESKTOP}/pcmanfm.desktop"
 ln -s "/media/sf_PiecesNumeriques" "${CTRL_DESKTOP}/PiecesNumeriques"
 
 chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_DESKTOP}"
