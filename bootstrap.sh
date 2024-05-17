@@ -43,6 +43,7 @@ pacstrap -K "$INSTALL_MOUNT_POINT_ROOT" \
 	sudo \
 	dhcpcd \
 	git jq usbutils \
+	zip unzip p7zip \
 	plasma-meta kde-applications-meta sddm xdg-utils pcmanfm \
 	noto-fonts noto-fonts-emoji noto-fonts-extra ttf-dejavu ttf-inconsolata ttf-liberation ttf-roboto \
 	virtualbox-guest-utils \
