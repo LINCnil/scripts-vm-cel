@@ -10,8 +10,16 @@ CTRL_DESKTOP="${CTRL_HOME}/Bureau"
 CTRL_RESULTS_DIR="${CTRL_DESKTOP}/Resultats"
 SCRIPTS_ROOT="${CTRL_HOME}/script_data"
 
-COOKIES_LIST_NAME="cnil_cookies_list-2.1.0-fx.xpi"
-COOKIES_LIST_URL="https://github.com/LINCnil/CNIL-Cookies-List/raw/master/release/$COOKIES_LIST_NAME"
+COOKIES_LIST_VERSION="3.0.3"
+COOKIES_LIST_TAG_NAME="v${COOKIES_LIST_VERSION}"
+COOKIES_LIST_CHROME_ID="fejljjffnkkeabbgokmalgbamkdobekb"
+COOKIES_LIST_DIR="${CTRL_HOME}/CNIL-Cookies-List"
+COOKIES_LIST_BASE_URL="https://github.com/LINCnil/CNIL-Cookies-List/releases/download/${COOKIES_LIST_TAG_NAME}/"
+COOKIES_LIST_NAME_CHECKSUM="SHA256SUMS"
+COOKIES_LIST_NAME_CHROME="cnil-cookies-list_${COOKIES_LIST_VERSION}.chrome.signed.crx"
+COOKIES_LIST_NAME_FIREFOX="cnil-cookies-list_${COOKIES_LIST_VERSION}.firefox.signed.xpi"
+
+CHROMIUM_EXT_DIR="/usr/share/chromium/extensions/"
 
 copy_file() {
 	sudo install --verbose --group="$CTRL_GROUP" --owner="$CTRL_USERNAME" "$1" "$2"
@@ -29,14 +37,43 @@ sudo localectl set-keymap fr
 
 
 #
+# -----------------
+# CNIL-Cookies-List
+# -----------------
+#
+
+mkdir -p "$COOKIES_LIST_DIR"
+cd "$COOKIES_LIST_DIR"
+wget "${COOKIES_LIST_BASE_URL}${COOKIES_LIST_NAME_CHECKSUM}"
+wget "${COOKIES_LIST_BASE_URL}${COOKIES_LIST_NAME_CHROME}"
+wget "${COOKIES_LIST_BASE_URL}${COOKIES_LIST_NAME_FIREFOX}"
+sha256sum --check "$COOKIES_LIST_NAME_CHECKSUM"
+cd "$HOME"
+
+
+#
+# --------
+# Chromium
+# --------
+#
+
+cat >"${COOKIES_LIST_DIR}/${COOKIES_LIST_CHROME_ID}.json" << EOF
+{
+    "external_crx": "${COOKIES_LIST_DIR}/${COOKIES_LIST_NAME_CHROME}",
+    "external_version": "${COOKIES_LIST_VERSION}"
+}
+EOF
+sudo cp "${COOKIES_LIST_DIR}/${COOKIES_LIST_CHROME_ID}.json" "${CHROMIUM_EXT_DIR}/${COOKIES_LIST_CHROME_ID}.json"
+
+
+#
 # -------
 # Firefox
 # -------
 #
 
 # Installation de CNIL Cookies List
-wget "$COOKIES_LIST_URL" -O "${CTRL_HOME}/${COOKIES_LIST_NAME}"
-firefox "${CTRL_HOME}/${COOKIES_LIST_NAME}"
+firefox "${COOKIES_LIST_DIR}/${COOKIES_LIST_NAME_FIREFOX}"
 
 # Récupération du chemin vers le profil FireFox
 CTRL_MOZ_HOME="${CTRL_HOME}/.mozilla/firefox"
