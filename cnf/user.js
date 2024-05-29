@@ -1,50 +1,53 @@
-//Désactive le fait de montrer la barre de menu quand on appuie sur alt... TODO : changer
-//sticky_pref("ui.key.menuAccessKeyFocuses",false);
+// Démarre sur une page blanche
+user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.startup.homepage", "about:blank");
 
-//Démarrer sur une page blanche
-user_pref("browser.newtabpage.enabled",false);
-user_pref("browser.startup.homepage","about:blank");
+// Désactive l'option "Afficher les suggestions de rechercher"
+user_pref("browser.search.suggest.enabled", false);
 
-//Désactivation de l'option "Afficher les suggestions de rechercher"
-user_pref("browser.search.suggest.enabled",false);
+// Supprime la barre de recherche de l'écran principal
+user_pref("browser.search.widget.inNavBar", false);
 
-//Suppression de la barre de moteur de recherche dans l'écran principal
-user_pref("browser.search.widget.inNavBar",false);
+// Masque les moteurs de recherche autre que Wikipédia
+user_pref("browser.search.hiddenOneOffs", "Google,Amazon.fr,Bing,DuckDuckGo,eBay,Qwant");
 
-//Masque les moteurs de recherche autre que Wikipédia
-user_pref("browser.search.hiddenOneOffs","Google,Amazon.fr,Bing,DuckDuckGo,eBay,Qwant");
+// Empêche Firefox d’envoyer les URL tapées dans la barre de recherche à un service externe s’il n’arrive pas à les identifier correctement
+user_pref("keyword.enabled", false);
 
-//
-user_pref("keyword.enabled",false);
-user_pref("extensions.pocket.enabled",false);
+// Désactive l'utilisation de Pocket (service sponsorisé)
+user_pref("extensions.pocket.enabled", false);
 
-//Désactiver les mises à jour auto des extensions
-user_pref("extensions.update.autoUpdateDefault",false);
+// Désactive les mises à jour auto des extensions
+user_pref("extensions.update.autoUpdateDefault", false);
 
-//Conserver l'historique selectionnée (par défaut);
+// Conserve l'historique selectionnée (par défaut);
 user_pref("places.history.enabled", true);
 user_pref("browser.formfill.enable", true);
 
-//Désactiver toutes les protections contre le pistage
-user_pref("browser.contentblocking.category","custom");
+// Désactiver toutes les protections contre le pistage
+user_pref("browser.contentblocking.category", "custom");
 user_pref("pref.privacy.disable_button.tracking_protection_exceptions", false);
-user_pref("privacy.trackingprotection.pbmode.enabled",false);
+user_pref("privacy.trackingprotection.pbmode.enabled", false);
 
-//Header "Do not Track" désactivé
-user_pref("privacy.donottrackheader.enabled",false);
+// Désactive le Header "Do not Track"
+user_pref("privacy.donottrackheader.enabled", false);
 
-//Désactiver le blocage des popups
-user_pref("dom.disable_open_during_load",false);
+// Désactive le blocage des popups
+user_pref("dom.disable_open_during_load", false);
 
-//Désactiver les options de blacage de contenus trompeurs/dangereux
-user_pref("browser.safebrowsing.malware.enabled",false);
-user_pref("brower.safebrowsing.phising.enabled",false);
+// Désactive les options de blocage de contenus trompeurs/dangereux
+user_pref("browser.safebrowsing.malware.enabled", false);
+user_pref("brower.safebrowsing.phising.enabled", false);
 
-//Désactiver les envois de rapports de plantage
-user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2",false);
+// Désactive les envois de rapports de plantage
+user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 
-//Pas de proxy
-user_pref("network.proxy.type",0);
+// Pas de proxy
+user_pref("network.proxy.type", 0);
 
-//Désactiver la MaJ auto des moteurs de recherche
-user_pref("browser.search.update",false);
+// Désactive la MaJ auto des moteurs de recherche
+user_pref("browser.search.update", false);
+
+// Désactive la restrictions des sites par Mozilla
+// https://support.mozilla.org/fr/kb/quarantaine-domaines
+user_pref("extensions.quarantinedDomains.enabled", false);
