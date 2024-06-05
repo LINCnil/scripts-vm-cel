@@ -10,8 +10,8 @@ CTRL_DESKTOP="${CTRL_HOME}/Bureau"
 CTRL_RESULTS_DIR="${CTRL_DESKTOP}/Resultats"
 SCRIPTS_ROOT="${CTRL_HOME}/script_data"
 
-COOKIES_LIST_VERSION="3.0.3"
-COOKIES_LIST_TAG_NAME="v${COOKIES_LIST_VERSION}"
+COOKIES_LIST_TAG_NAME=$(curl --silent "https://api.github.com/repos/LINCnil/CNIL-Cookies-List/releases/latest" | jq '.tag_name' | tr --delete '"')
+COOKIES_LIST_VERSION=$(echo "COOKIES_LIST_TAG_NAME" | tr --delete 'v')
 COOKIES_LIST_CHROME_ID="fejljjffnkkeabbgokmalgbamkdobekb"
 COOKIES_LIST_DIR="${CTRL_HOME}/CNIL-Cookies-List"
 COOKIES_LIST_BASE_URL="https://github.com/LINCnil/CNIL-Cookies-List/releases/download/${COOKIES_LIST_TAG_NAME}/"
