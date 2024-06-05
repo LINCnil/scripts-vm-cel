@@ -59,8 +59,8 @@ cd "$HOME"
 
 cat >"${COOKIES_LIST_DIR}/${COOKIES_LIST_CHROME_ID}.json" << EOF
 {
-    "external_crx": "${COOKIES_LIST_DIR}/${COOKIES_LIST_NAME_CHROME}",
-    "external_version": "${COOKIES_LIST_VERSION}"
+	"external_crx": "${COOKIES_LIST_DIR}/${COOKIES_LIST_NAME_CHROME}",
+	"external_version": "${COOKIES_LIST_VERSION}"
 }
 EOF
 sudo cp "${COOKIES_LIST_DIR}/${COOKIES_LIST_CHROME_ID}.json" "${CHROMIUM_EXT_DIR}/${COOKIES_LIST_CHROME_ID}.json"
