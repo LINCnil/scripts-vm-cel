@@ -35,8 +35,6 @@ fi
 # Configuration de dnsmasq
 cat <<EOF > /etc/dnsmasq.conf
 log-facility=/var/log/dnsmasq.log
-# adressage fait manuellement ensuite avec ifconfig :
-#address=/#/10.0.0.1
 interface=${AP_INTERFACE}
 dhcp-range=10.0.0.10,10.0.0.250,48h
 # définition de la route par défaut (3) et du serveur DNS (6) :
@@ -65,9 +63,7 @@ nft add rule inet nat postrouting oifname "${OUT_INTERFACE}" masquerade
 
 # Configuration du point d'access
 cat <<EOF > /etc/hostapd/hostapd.conf
-# vérifier le nom de l'interface wifi
 interface=${AP_INTERFACE}
-# laisser le driver par défaut
 driver=nl80211
 channel=${AP_CHANNEL}
 ssid=${AP_NAME}
