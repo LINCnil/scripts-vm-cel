@@ -53,7 +53,7 @@ pacstrap -K "$INSTALL_MOUNT_POINT_ROOT" \
 	dnsmasq hostapd iw \
 	mitmproxy mkcert \
 	obs-studio \
-	ssh-audit sqlmap \
+	lynis ssh-audit sqlmap \
 	wipe \
 	wireshark-qt
 
