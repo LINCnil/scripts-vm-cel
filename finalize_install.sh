@@ -132,6 +132,9 @@ sudo freshclam
 # shellcheck disable=SC2024
 sudo clamscan >"${CTRL_RESULTS_DIR}/ClamScan.txt"
 
+# Lynis
+lynis audit system --no-colors --quick --report-file "${CTRL_RESULTS_DIR}/LynisReport.txt" >"${CTRL_RESULTS_DIR}/LynisOutput.txt"
+
 # Correction des droits sur le dossier de résultats et son contenu
 sudo chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "$CTRL_RESULTS_DIR"
 
