@@ -48,7 +48,7 @@ pacstrap -K "$INSTALL_MOUNT_POINT_ROOT" \
 	noto-fonts noto-fonts-emoji noto-fonts-extra ttf-dejavu ttf-inconsolata ttf-liberation ttf-roboto \
 	virtualbox-guest-utils \
 	clamav \
-	bind inetutils nmap wget whois \
+	bind inetutils net-tools nmap wget whois \
 	chromium firefox firefox-i18n-fr \
 	dnsmasq hostapd iw \
 	mitmproxy mkcert \
