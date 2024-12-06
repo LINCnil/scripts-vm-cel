@@ -101,6 +101,7 @@ mkdir -p "${CTRL_BIN_DATA}"
 cp -v "${CTRL_SCRIPT_DATA}/wifi_ap_setup.sh" "${CTRL_BIN_DATA}"
 chmod 755 "${CTRL_BIN_DATA}/wifi_ap_setup.sh"
 chown --recursive "${CTRL_USERNAME}:${CTRL_GROUP}" "${CTRL_LOCAL_DATA}"
+# shellcheck disable=SC2016
 echo 'export PATH="$PATH:$HOME/.local/bin"' >>"${CTRL_HOME}/.bashrc"
 
 # Agencement clavier
