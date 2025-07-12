@@ -11,8 +11,8 @@ set /p IsoPath=Indiquez le chemin vers l'image ISO :
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" createvm --name "%VmName%" --ostype "ArchLinux_64" --register
 
 :: Paramétrage de la VM
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --memory 8000
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --cpus 2
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --memory 32086
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --cpus 8
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --pae on
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --graphicscontroller vmsvga
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VmName%" --nic1 bridged
