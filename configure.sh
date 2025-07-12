@@ -189,7 +189,3 @@ aur_install() {
 # https://wiki.archlinux.org/title/AUR_helpers
 # https://aur.archlinux.org/packages/yay-bin
 aur_install "yay-bin"
-
-# ChkRootkit
-# https://aur.archlinux.org/packages/chkrootkit
-aur_install "chkrootkit"
