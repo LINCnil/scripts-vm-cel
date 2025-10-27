@@ -23,7 +23,7 @@ set /p IsoPath=Indiquez le chemin vers l'image ISO :
 
 :: Disque dur
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storagectl "%VmName%" --name "SATA" --add sata --controller IntelAhci
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" createmedium disk --format VDI --size 20000 --filename "%UserProfile%\VirtualBox VMs\%VmName%\%VmName%.vdi"
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" createmedium disk --format VDI --size 50000 --filename "%UserProfile%\VirtualBox VMs\%VmName%\%VmName%.vdi"
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storageattach "%VmName%" --storagectl "SATA" --port 0 --device 0 --type hdd --medium "%UserProfile%\VirtualBox VMs\%VmName%\%VmName%.vdi"
 
 :: Image ISO du système

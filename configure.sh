@@ -189,3 +189,9 @@ aur_install() {
 # https://wiki.archlinux.org/title/AUR_helpers
 # https://aur.archlinux.org/packages/yay-bin
 aur_install "yay-bin"
+
+# OpenRDAP
+# https://www.openrdap.org/
+# https://www.icann.org/en/announcements/details/icann-update-launching-rdap-sunsetting-whois-27-01-2025-en
+aur_install "openrdap-client"
+
